@@ -1,7 +1,7 @@
 
 #1
 ##a
-roadrace_data =read.csv(" C:/Users/allam/Documents/Spring 2022/CS6313 - Statistical Methods/MiniProjects/MiniProject2/roadrace.csv")
+roadrace_data =read.csv("C:/Users/allam/Documents/Spring 2022/CS6313 - Statistical Methods/MiniProjects/MiniProject2/roadrace.csv")
 head(roadrace_data$Age)
 View(roadrace_data)
 #barplot(c(sum(roadrace_data$Maine == "Away"), sum(roadrace_data$Maine == "Maine")), names.arg =c("Away", "Maine"), space = 0.25, ylab = "Number of runners")
@@ -21,7 +21,7 @@ summary(roadrace_data$Maine)
 ## a final
 
 
-roadrace_data =read.csv(" C:/Users/allam/Documents/Spring 2022/CS6313 - Statistical Methods/MiniProjects/MiniProject2/roadrace.csv")
+roadrace_data = read.csv("C:/Users/allam/Documents/Spring 2022/CS6313 - Statistical Methods/MiniProjects/MiniProject2/roadrace.csv")
 Maine = sum(roadrace_data$Maine == "Maine")
 Away = sum(roadrace_data$Maine == "Away")
 barplot(c(Maine,Away),main ="Question1", ylab = "Number of runners", names=c("Maine","Away"),
@@ -31,12 +31,12 @@ Away
 summary(roadrace_data$Maine)
 ##b
 
-Away = data$Time..minutes.[which(data$Maine == 'Away')] 
-hist(Away, main = "Histogram - Runner Time (Maine)", xlim = range(0,200), ylim = range(0,2000), 
+Away = roadrace_data$Time..minutes.[which(roadrace_data$Maine == 'Away')] 
+hist(AwayRunnerTime, main = "Histogram - Runner Time (Away)", xlim = range(0,200), ylim = range(0,2000), 
      xlab = "Away Runner Time (minutes)", ylab = "Frequency", border = "black", col = "yellow" )
 
-Maine = data$Time..minutes.[which(data$Maine == "Maine")]
-hist(Maine, main = "Histogram - Runner Time (Maine)", xlim = range(0,200), ylim = range(0,2000),
+Maine = roadrace_data$Time..minutes.[which(roadrace_data$Maine == "Maine")]
+hist(MaineRunnerTime, main = "Histogram - Runner Time (Maine)", xlim = range(0,200), ylim = range(0,2000),
      xlab = "Maine Runner Time (minutes)", ylab = "Frequency" , border = "black", col = "yellow")
 
 
@@ -59,8 +59,8 @@ summary(Maine)
 
 
 ##c
-Away = data$Time..minutes.[which(data$Maine == "Away")] 
-Maine = data$Time..minutes.[which(data$Maine == "Maine")]
+Away = roadrace_data$Time..minutes.[which(roadrace_data$Maine == "Away")] 
+Maine = roadrace_data$Time..minutes.[which(roadrace_data$Maine == "Maine")]
 boxplot(Maine, Away, names = c("Maine Time", "Away Time"), main = "Box plot",ylab = "Frequency", 
         col = "yellow", border= "orange")
 
@@ -76,8 +76,10 @@ boxplot(Maine, Away, names = c("Maine Time", "Away Time"), main = "Box plot",yla
 MaleAge = roadrace_data$Age[which(roadrace_data$Sex=='M')]
 FemaleAge = roadrace_data$Age[which(roadrace_data$Sex=='F')]
 
-MaleAge = as.numeric(MaleAge)
-FemaleAge = as.numeric(FemaleAge)
+min(MaleAge)
+
+MaleAge = as.numeric(as.character(MaleAge))
+FemaleAge = as.numeric(as.character(FemaleAge))
 min(as.numeric(MaleAge))
 mean(FemaleAge)
 #MaleAge<-as.numeric(MaleAge)
@@ -109,7 +111,7 @@ sd(FemaleAge)
 
 #2
 
-data1= read.csv(" C:/Users/allam/Documents/Spring 2022/CS6313 - Statistical Methods/MiniProjects/MiniProject2/motorcycle.csv")
+data1= read.csv("C:/Users/allam/Documents/Spring 2022/CS6313 - Statistical Methods/MiniProjects/MiniProject2/motorcycle.csv")
 FatalAccidents = data1$Fatal.Motorcycle.Accidents
 #Now create boxplot for Fatal.Motorcycle.Accidents values
 boxplot(FatalAccidents, xlab = "Fatal Motorcycle Accidents", ylab = "Number of Accidents") 
@@ -133,7 +135,7 @@ sd(FatalAccidents)
 #2 final
 
 
-data1= read.csv(" C:/Users/allam/Documents/Spring 2022/CS6313 - Statistical Methods/MiniProjects/MiniProject2/motorcycle.csv")
+data1= read.csv("C:/Users/allam/Documents/Spring 2022/CS6313 - Statistical Methods/MiniProjects/MiniProject2/motorcycle.csv")
 FatalAccidents = data1$Fatal.Motorcycle.Accidents
 
 boxplot(FatalAccidents, main = "BoxPlot - Motorcycle Accidents", xlab = "Fatal Accidents", ylab = "Accidents count", col="orange") 
