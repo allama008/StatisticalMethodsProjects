@@ -13,7 +13,7 @@ summary(roadrace_data$Maine)
 # Question 1b)
 
 away_runner_time = roadrace_data$Time..minutes.[which(roadrace_data$Maine == 'Away')] 
-hist(away_runner_time, main = "Histogram - Runner Time (Away)", xlim = range(0,200), ylim = range(0,600), 
+hist(away_runner_time, main = "Histogram - Runner Time (Away)", xlim = range(0,200), ylim = range(0,2000), 
      xlab = "Away Runner Time (minutes)", ylab = "Frequency", border = "black", col = "yellow" )
 
 maine_runner_time = roadrace_data$Time..minutes.[which(roadrace_data$Maine == "Maine")]
